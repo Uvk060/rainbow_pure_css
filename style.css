@@ -1,0 +1,84 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.on_hover_infinite_rainbow {
+  font-size: 2rem;
+  position: relative;
+  width: 20rem;
+  height: 7rem;
+  background-image: linear-gradient(
+    to right,
+    red,
+    darkviolet,
+    deeppink,
+    hotpink,
+    violet,
+    pink,
+    lightpink,
+    pink,
+    violet,
+    hotpink,
+    deeppink,
+    darkviolet,
+    red
+  );
+}
+
+.on_hover_infinite_rainbow::before {
+  content: "";
+  position: absolute;
+  width: 19rem;
+  height: 6rem;
+  background-color: black;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.on_hover_infinite_rainbow::after {
+  content: "HOVER ME";
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    red,
+    darkviolet,
+    deeppink,
+    hotpink,
+    violet,
+    pink,
+    lightpink,
+    pink,
+    violet,
+    hotpink,
+    deeppink,
+    darkviolet,
+    red
+  );
+  color: ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-family: serif;
+  font-weight: normal;
+  font-size: 1.9rem;
+}
+
+@keyframes move {
+  to {
+    background-position: 2500vh;
+  }
+}
+
+.on_hover_infinite_rainbow:hover {
+  animation: move 24s linear infinite;
+}
+
+.on_hover_infinite_rainbow:hover:after {
+  animation: move 54s linear infinite;
+}
